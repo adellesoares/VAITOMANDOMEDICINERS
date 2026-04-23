@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade de Tópicos — Comvest 2026 Medicina</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f2ec;
+  --surface: #ffffff;
+  --surface2: #f0ece4;
+  --border: #d9d3c7;
+  --border2: #c4bdb0;
+  --text: #1a1714;
+  --muted: #7a7268;
+  --accent: #2d1f0e;
+
+  --bio: #1a5c3a;
+  --bio-bg: #edf7f2;
+  --bio-border: #b3ddc8;
+
+  --quim: #3d1a5c;
+  --quim-bg: #f3edf7;
+  --quim-border: #c8b3dd;
+
+  --mat: #1a3d5c;
+  --mat-bg: #edf3f7;
+  --mat-border: #b3c8dd;
+
+  --fis: #5c3d1a;
+  --fis-bg: #f7f3ed;
+  --fis-border: #ddc8b3;
+
+  --hum: #5c1a1a;
+  --hum-bg: #f7edec;
+  --hum-border: #ddb3b3;
+
+  --geo: #1a4a5c;
+  --geo-bg: #edf5f7;
+  --geo-border: #b3cedb;
+
+  --fil: #3a3a1a;
+  --fil-bg: #f5f5ed;
+  --fil-border: #d0d0b3;
+
+  --por: #4a1a3a;
+  --por-bg: #f7edf3;
+  --por-border: #dbb3cb;
+
+  --ing: #1a4a3a;
+  --ing-bg: #edf7f3;
+  --ing-border: #b3d9c8;
+
+  --red: #5c2a1a;
+  --red-bg: #f7f0ed;
+  --red-border: #ddc3b3;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* HEADER */
+.header {
+  background: var(--accent);
+  color: #f5f2ec;
+  padding: 56px 48px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: 'COMVEST';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 140px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: -4px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.header-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.5);
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.header h1 em {
+  font-style: italic;
+  color: #c8a882;
+}
+
+.header-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(245,242,236,0.45);
+  margin-top: 20px;
+}
+
+.header-meta {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  border-left: 2px solid rgba(200,168,130,0.4);
+  padding-left: 16px;
+}
+
+.meta-item span {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,236,0.4);
+  margin-bottom: 4px;
+}
+
+.meta-item strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #c8a882;
+}
+
+/* NAV */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav a {
+  display: block;
+  padding: 14px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.nav a:hover { color: var(--text); border-bottom-color: var(--border2); }
+
+/* INTRO BOX */
+.intro {
+  padding: 32px 48px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.intro-note {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.intro-note strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* MAIN */
+.main {
+  padding: 48px;
+  display: grid;
+  gap: 56px;
+}
+
+/* DISCIPLINE BLOCK */
+.discipline {
+  scroll-margin-top: 50px;
+}
+
+.disc-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid currentColor;
+}
+
+.disc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.12;
+}
+
+.disc-info h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.disc-info p {
+  font-size: 13px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.disc-badge {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+/* MODULE GRID */
+.modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.module {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.module-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.module-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.module-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.module-flag {
+  margin-left: auto;
+  font-size: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.flag-hot { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+.flag-med { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+.flag-ok  { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+
+.module-body {
+  padding: 14px 18px;
+}
+
+.topic-list {
+  list-style: none;
+  display: grid;
+  gap: 5px;
+}
+
+.topic-list li {
+  font-size: 12.5px;
+  color: var(--text);
+  opacity: 0.8;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.topic-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.topic-list li.highlight {
+  opacity: 1;
+  font-weight: 500;
+}
+
+.topic-list li.highlight::before {
+  content: '★';
+  font-size: 9px;
+  top: 2px;
+}
+
+/* SECTION DIVIDERS */
+.sub-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sub-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* FOOTER */
+.footer {
+  padding: 32px 48px;
+  border-top: 2px solid var(--border2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--surface);
+}
+
+.footer p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.legend-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.leg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.leg-dot {
+  width: 8px; height: 8px; border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .header, .main, .intro { padding: 28px 20px; }
+  .nav { padding: 0 20px; }
+  .intro { grid-template-columns: 1fr; }
+  .footer { padding: 24px 20px; }
+  .disc-num { font-size: 36px; }
+}
+
+/* ===== CHECKBOX SYSTEM ===== */
+.topic-list li {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-left: 0;
+  transition: opacity 0.2s;
+}
+
+.topic-list li::before { display: none; }
+
+.topic-check {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--border2);
+  border-radius: 3px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  background: white;
+}
+
+.topic-list li:hover .topic-check {
+  border-color: #999;
+}
+
+.topic-list li.done .topic-check {
+  background: #2d7a4f;
+  border-color: #2d7a4f;
+}
+
+.topic-list li.done .topic-check::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-left: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+  transform: rotate(-45deg) translate(1px, -1px);
+  display: block;
+}
+
+.topic-list li.done .topic-text {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.topic-list li.highlight .topic-check {
+  border-color: #b0a060;
+}
+
+.topic-list li.highlight.done .topic-check {
+  background: #2d7a4f;
+  border-color: #2d7a4f;
+}
+
+/* PROGRESS BAR */
+.disc-progress {
+  margin-bottom: 20px;
+}
+
+.disc-progress-bar-wrap {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.disc-progress-bar {
+  height: 100%;
+  background: #2d7a4f;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.disc-progress-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* GLOBAL PROGRESS */
+.global-progress {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.global-progress-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.global-progress-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.global-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #2d7a4f, #4fa870);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+.global-progress-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2d7a4f;
+  min-width: 40px;
+  text-align: right;
+}
+
+.reset-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.reset-btn:hover { color: #b91c1c; border-color: #fecaca; background: #fef2f2; }
+
+@media (max-width: 768px) {
+  .global-progress { padding: 12px 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-tag">Grade Completa de Conteúdos · Comvest 2026 · Medicina Unicamp</div>
+  <h1>Tópicos de<br><em>Ponta a Ponta</em></h1>
+  <div class="header-sub">// 10 disciplinas · todos os módulos · padrão cursinho preparatório</div>
+  <div class="header-meta">
+    <div class="meta-item"><span>1ª Fase</span><strong>18 out 2026</strong></div>
+    <div class="meta-item"><span>2ª Fase</span><strong>29–30 nov 2026</strong></div>
+    <div class="meta-item"><span>Foco</span><strong>Medicina</strong></div>
+    <div class="meta-item"><span>Banca</span><strong>Comvest/Unicamp</strong></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#bio">Biologia</a>
+  <a href="#quim">Química</a>
+  <a href="#mat">Matemática</a>
+  <a href="#fis">Física</a>
+  <a href="#his">História</a>
+  <a href="#geo">Geografia</a>
+  <a href="#fil">Fil/Sociologia</a>
+  <a href="#por">Português</a>
+  <a href="#ing">Inglês</a>
+  <a href="#red">Redação</a>
+</nav>
+
+<!-- INTRO -->
+<div class="intro">
+  <div class="intro-note">
+    <strong>★ Muito frequente no Comvest</strong>
+    Tópicos marcados com estrela aparecem com alta recorrência nas provas históricas. Dê prioridade máxima a eles.
+  </div>
+  <div class="intro-note">
+    <strong>Flags de urgência</strong>
+    🔴 Alta prioridade (fraqueza + peso alto) · 🟡 Média prioridade · 🟢 Manutenção (já tem base)
+  </div>
+  <div class="intro-note">
+    <strong>Como usar este documento</strong>
+    Siga módulo a módulo dentro de cada disciplina. Quando dominar um tópico, marque. Volte sempre nos ★ antes de simulados.
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ===== BIOLOGIA ===== -->
+<section class="discipline" id="bio" style="color:var(--bio)">
+  <div class="disc-header">
+    <div class="disc-num">01</div>
+    <div class="disc-info">
+      <h2>Biologia</h2>
+      <p>Prioridade máxima · Fraqueza declarada · Peso altíssimo em Medicina na 2ª fase</p>
+    </div>
+    <div class="disc-badge">CRÍTICA</div>
+  </div>
+
+  <div class="sub-label">Módulo 1 — Citologia (Biologia Celular)</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">1.1</span>
+        <span class="module-title">Organização Celular</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Célula procariótica vs eucariótica</li>
+          <li>Célula animal vs vegetal</li>
+          <li class="highlight">Membrana plasmática: estrutura e função</li>
+          <li>Modelos de membrana (mosaico fluido)</li>
+          <li class="highlight">Transporte: difusão, osmose, ativo, endocitose, exocitose</li>
+          <li>Parede celular vegetal e cápsula bacteriana</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">1.2</span>
+        <span class="module-title">Organelas Citoplasmáticas</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Mitocôndria: estrutura, respiração celular</li>
+          <li class="highlight">Cloroplasto: fotossíntese, estrutura</li>
+          <li>Retículo endoplasmático liso e rugoso</li>
+          <li>Complexo de Golgi: funções</li>
+          <li>Lisossomo, peroxissomo, vacúolo</li>
+          <li>Ribossomo: síntese proteica</li>
+          <li>Centríolo e citoesqueleto</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">1.3</span>
+        <span class="module-title">Núcleo e Material Genético</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Estrutura do núcleo: carioteca, nucléolo, cromatina</li>
+          <li class="highlight">DNA: estrutura (dupla-hélice), bases nitrogenadas</li>
+          <li class="highlight">Replicação do DNA: semiconservativa</li>
+          <li>Empacotamento: nucleossomo, cromossomo</li>
+          <li>Cromossomos: número, forma, cariotipo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">1.4</span>
+        <span class="module-title">Metabolismo Energético</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Fotossíntese: fase clara e ciclo de Calvin</li>
+          <li class="highlight">Respiração celular: glicólise, Krebs, fosforilação oxidativa</li>
+          <li>Fermentação: lática e alcoólica</li>
+          <li>Quimiossíntese</li>
+          <li>Saldo de ATP em cada via</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">1.5</span>
+        <span class="module-title">Divisão Celular</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Ciclo celular: interfase (G1, S, G2) e mitose</li>
+          <li class="highlight">Fases da mitose: prófase, metáfase, anáfase, telófase</li>
+          <li class="highlight">Meiose I e II: diferenças da mitose</li>
+          <li class="highlight">Meiose e variabilidade genética (crossing-over)</li>
+          <li>Gametogênese: espermatogênese e ovogênese</li>
+          <li>Controle do ciclo celular e câncer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">Módulo 2 — Genética</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">2.1</span>
+        <span class="module-title">Leis de Mendel</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">1ª Lei: dominância, recessividade, segregação dos alelos</li>
+          <li class="highlight">2ª Lei: segregação independente (diibridismo)</li>
+          <li>Proporções fenotípicas e genotípicas</li>
+          <li>Quadro de Punnett</li>
+          <li>Dominância incompleta e codominância</li>
+          <li class="highlight">Alelos múltiplos: sistema ABO e Rh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">2.2</span>
+        <span class="module-title">Herança Ligada ao Sexo</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Cromossomos sexuais X e Y</li>
+          <li class="highlight">Daltonismo e hemofilia: padrão de herança</li>
+          <li>Herança holândrica (ligada ao Y)</li>
+          <li>Inativação do X (Barr corpuscle)</li>
+          <li class="highlight">Resolução de heredogramas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">2.3</span>
+        <span class="module-title">Interações Gênicas e Epistasia</span>
+        <span class="module-flag flag-med">MÉDIA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li>Epistasia dominante e recessiva</li>
+          <li>Genes complementares</li>
+          <li>Herança quantitativa/poligênica</li>
+          <li>Pleiotropia</li>
+          <li>Penetrância e expressividade</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">2.4</span>
+        <span class="module-title">Mutações e Aberrações</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Mutações gênicas: tipos e causas</li>
+          <li class="highlight">Aberrações cromossômicas numéricas: síndrome de Down (trissomia 21), Turner, Klinefelter</li>
+          <li>Aberrações estruturais: deleção, inversão, translocação</li>
+          <li class="highlight">Mutação e câncer</li>
+          <li>Agentes mutagênicos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">2.5</span>
+        <span class="module-title">Biotecnologia e Engenharia Genética</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">DNA recombinante: enzimas de restrição, ligase, vetores</li>
+          <li class="highlight">PCR (reação em cadeia da polimerase)</li>
+          <li class="highlight">Organismos transgênicos</li>
+          <li>Clonagem: reprodutiva e terapêutica</li>
+          <li>Células-tronco: embrionárias e adultas</li>
+          <li class="highlight">CRISPR-Cas9 (conceito básico)</li>
+          <li>Sequenciamento genômico: Projeto Genoma</li>
+          <li>Terapia gênica</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">Módulo 3 — Biologia Molecular</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">3.1</span>
+        <span class="module-title">Fluxo da Informação Genética</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Transcrição: DNA → RNA (mRNA, tRNA, rRNA)</li>
+          <li class="highlight">Tradução: código genético, ribossomo, síntese proteica</li>
+          <li class="highlight">Dogma central da biologia molecular</li>
+          <li>RNA polimerase, promotores, éxons e íntrons</li>
+          <li>Splicing alternativo</li>
+          <li>Regulação gênica: operons (lac operon)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">3.2</span>
+        <span class="module-title">Vírus e Bactérias</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Vírus: estrutura, ciclo lítico e lisogênico</li>
+          <li class="highlight">Retrovírus: HIV, mecanismo de ação</li>
+          <li class="highlight">Bactérias: parede, reprodução, resistência a antibióticos</li>
+          <li>Conjugação, transformação, transdução bacteriana</li>
+          <li class="highlight">Doenças virais relevantes: dengue, COVID-19, hepatites, gripe</li>
+          <li>Doenças bacterianas: tuberculose, sífilis, tétano, cólera</li>
+          <li>Vacinas: mecanismo de ação</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">Módulo 4 — Fisiologia Humana</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">4.1</span>
+        <span class="module-title">Sistema Digestório</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Órgãos e funções: boca, estômago, intestinos, fígado, pâncreas</li>
+          <li class="highlight">Digestão de carboidratos, proteínas e lipídios</li>
+          <li>Enzimas digestivas e seu pH ideal</li>
+          <li>Absorção: vilosidades intestinais</li>
+          <li>Microbiota intestinal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">4.2</span>
+        <span class="module-title">Sistema Circulatório</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Coração: estrutura, câmaras, valvas, ciclo cardíaco</li>
+          <li class="highlight">Circulação pulmonar e sistêmica</li>
+          <li>Vasos: artérias, veias, capilares</li>
+          <li class="highlight">Sangue: componentes (eritrócitos, leucócitos, plaquetas)</li>
+          <li>Hemostasia e coagulação</li>
+          <li>Pressão arterial e hipertensão</li>
+          <li>Doenças cardiovasculares: infarto, aterosclerose</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">4.3</span>
+        <span class="module-title">Sistema Respiratório</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Anatomia: nariz, laringe, traqueia, brônquios, alvéolos</li>
+          <li class="highlight">Hematose: trocas gasosas nos alvéolos</li>
+          <li>Transporte de O₂ e CO₂ no sangue</li>
+          <li class="highlight">Mecânica respiratória: inspiração e expiração</li>
+          <li>Doenças: asma, enfisema, pneumonia</li>
+          <li>Tabagismo e câncer de pulmão</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">4.4</span>
+        <span class="module-title">Sistema Nervoso</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Neurônio: estrutura e tipos</li>
+          <li class="highlight">Potencial de ação e propagação do impulso</li>
+          <li class="highlight">Sinapses: neurotransmissores (dopamina, serotonina, acetilcolina)</li>
+          <li>SNC e SNP: divisões e funções</li>
+          <li>Encéfalo: cérebro, cerebelo, tronco encefálico</li>
+          <li>Medula espinhal: reflexos</li>
+          <li>Sistema nervoso autônomo: simpático e parassimpático</li>
+          <li>Drogas e sistema nervoso: mecanismos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">4.5</span>
+        <span class="module-title">Sistema Endócrino</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Glândulas e hormônios: hipófise, tireoide, adrenal, pâncreas, gônadas</li>
+          <li class="highlight">Regulação da glicemia: insulina e glucagon — diabetes</li>
+          <li>Hormônios da tireoide e cretinismo</li>
+          <li>Eixo hipotálamo-hipófise</li>
+          <li class="highlight">Ciclo menstrual: hormônios FSH, LH, estrogênio, progesterona</li>
+          <li>Contracepção hormonal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">4.6</span>
+        <span class="module-title">Sistema Imunológico</span>
+        <span class="module-flag flag-hot">ALTA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Imunidade inata vs adaptativa</li>
+          <li class="highlight">Linfócitos T e B: funções</li>
+          <li class="highlight">Anticorpos: estrutura e ação</li>
+          <li class="highlight">HIV/AIDS: mecanismo de destruição imune</li>
+          <li>Vacinas vs soros: diferenças</li>
+          <li>Doenças autoimunes</li>
+          <li>Alergias: IgE e hipersensibilidade</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">4.7</span>
+        <span class="module-title">Outros Sistemas</span>
+        <span class="module-flag flag-med">MÉDIA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li>Sistema excretor: rim, néfron, filtração glomerular</li>
+          <li>Sistema locomotor: ossos, músculos, articulações</li>
+          <li>Sistema reprodutor: masculino e feminino</li>
+          <li class="highlight">Desenvolvimento embrionário: fecundação, segmentação, gastrulação</li>
+          <li>Placenta e anexos embrionários</li>
+          <li>Sentidos: olho, ouvido (estrutura básica)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label">Módulo 5 — Ecologia e Evolução</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">5.1</span>
+        <span class="module-title">Ecologia</span>
+        <span class="module-flag flag-med">MÉDIA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Cadeias e teias alimentares: produtores, consumidores, decompositores</li>
+          <li class="highlight">Fluxo de energia e pirâmides ecológicas</li>
+          <li>Ciclos biogeoquímicos: C, N, P, H₂O</li>
+          <li>Relações ecológicas: mutualismo, parasitismo, comensalismo, predatismo</li>
+          <li>Sucessão ecológica</li>
+          <li class="highlight">Biomas brasileiros: Cerrado, Amazônia, Mata Atlântica, Caatinga</li>
+          <li class="highlight">Problemas ambientais: desmatamento, efeito estufa, buraco na camada de ozônio</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">5.2</span>
+        <span class="module-title">Evolução</span>
+        <span class="module-flag flag-med">MÉDIA</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li class="highlight">Darwin e Wallace: seleção natural</li>
+          <li class="highlight">Teoria sintética da evolução (neodarwinismo)</li>
+          <li>Lamarck vs Darwin</li>
+          <li>Especiação: alopátrica e simpátrica</li>
+          <li>Deriva genética, gargalo, efeito fundador</li>
+          <li>Evidências da evolução: fósseis, anatomia comparada, embriologia</li>
+          <li>Evolução humana: Homo sapiens</li>
+        </ul>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-header">
+        <span class="module-num">5.3</span>
+        <span class="module-title">Origem da Vida e Classificação</span>
+        <span class="module-flag flag-ok">LEVE</span>
+      </div>
+      <div class="module-body">
+        <ul class="topic-list">
+          <li>Hipóteses sobre origem da vida: abiogênese, biogênese</li>
+          <li>Experiência de Miller-Urey</li>
+          <li>Classificação biológica: domínios e reinos</li>
+          <li>Nomenclatura binomial</li>
+          <li>Características dos 5 reinos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUÍMICA ===== -->
+<section class="discipline" id="quim" style="color:var(--quim)">
+  <div class="disc-header">
+    <div class="disc-num">02</div>
+    <div class="disc-info">
+      <h2>Química</h2>
+      <p>Alta prioridade · Fraqueza declarada · Maior retorno por hora estudada em Exatas</p>
+    </div>
+    <div class="disc-badge">ALTA</div>
+  </div>
+
+  <div class="sub-label">Módulo 1 — Química Geral</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Estrutura Atômica</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Modelos atômicos: Thomson, Rutherford, Bohr</li>
+        <li>Número atômico (Z), massa (A), nêutrons</li>
+        <li>Isótopos, isóbaros, isótonos</li>
+        <li class="highlight">Distribuição eletrônica: camadas e subníveis (s, p, d, f)</li>
+        <li>Diagrama de Linus Pauling</li>
+        <li>Partícula subatômica: próton, nêutron, elétron</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Tabela Periódica</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Períodos e grupos: tendências periódicas</li>
+        <li class="highlight">Raio atômico, eletronegatividade, energia de ionização</li>
+        <li>Elementos representativos vs de transição</li>
+        <li>Metais, não-metais, semimetais, gases nobres</li>
+        <li>Família IA, IIA, VIIA (halogênios), VIII A (gases nobres)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">Ligações Químicas</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Ligação iônica: formação, propriedades</li>
+        <li class="highlight">Ligação covalente: simples, dupla, tripla; polar e apolar</li>
+        <li>Ligação metálica: propriedades dos metais</li>
+        <li class="highlight">Geometria molecular: VSEPR (linear, angular, piramidal, tetraédrica)</li>
+        <li class="highlight">Polaridade molecular: dipolo</li>
+        <li>Forças intermoleculares: van der Waals, dipolo-dipolo, ligação de hidrogênio</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">Funções Inorgânicas</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Ácidos: definições de Arrhenius e Brønsted-Lowry, força, nomenclatura</li>
+        <li class="highlight">Bases: hidróxidos, força, nomenclatura</li>
+        <li class="highlight">Sais: nomenclatura, classificação</li>
+        <li>Óxidos: ácidos, básicos, anfóteros, neutros, duplos</li>
+        <li>Reações de neutralização</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="sub-label">Módulo 2 — Estequiometria e Cálculos</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">2.1</span><span class="module-title">Estequiometria</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Balanceamento de equações</li>
+        <li class="highlight">Mol e constante de Avogadro</li>
+        <li class="highlight">Massa molar, volume molar (22,4 L)</li>
+        <li>Reagente limitante e em excesso</li>
+        <li>Rendimento de reação (pureza)</li>
+        <li>Cálculos em série (reações consecutivas)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">2.2</span><span class="module-title">Soluções</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Concentração molar (M), comum (g/L), percentual (m/m, v/v)</li>
+        <li class="highlight">Diluição e mistura de soluções</li>
+        <li class="highlight">pH e pOH: cálculos, Kw</li>
+        <li class="highlight">Titulação ácido-base</li>
+        <li>Propriedades coligativas: efeitos do soluto (tonoscopia, ebulioscopia, crioscopia, osmoscopia)</li>
+        <li>Coloide e suspensão</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="sub-label">Módulo 3 — Físico-Química</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">3.1</span><span class="module-title">Termoquímica</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Entalpia: reação exotérmica e endotérmica</li>
+        <li class="highlight">Lei de Hess</li>
+        <li>Energia de ligação</li>
+        <li>Entalpia de formação e combustão</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">3.2</span><span class="module-title">Cinética Química</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Velocidade de reação: definição e cálculo</li>
+        <li class="highlight">Fatores que influenciam: temperatura, concentração, superfície de contato, catalisador</li>
+        <li>Teoria das colisões</li>
+        <li>Energia de ativação e catálise</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">3.3</span><span class="module-title">Equilíbrio Químico</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Conceito de equilíbrio dinâmico</li>
+        <li class="highlight">Constante de equilíbrio: Kc e Kp</li>
+        <li class="highlight">Princípio de Le Chatelier: deslocamento do equilíbrio</li>
+        <li>Hidrólise salina e pH de sais</li>
+        <li>Kw, Ka, Kb: constantes de ionização</li>
+        <li>Efeito do íon comum</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">3.4</span><span class="module-title">Eletroquímica</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Oxirredução: oxidação, redução, agentes</li>
+        <li class="highlight">Pilhas: ânodo, cátodo, ddp, pilha de Daniell</li>
+        <li>Série de reatividade dos metais</li>
+        <li class="highlight">Eletrólise: ígnea e aquosa</li>
+        <li>Lei de Faraday</li>
+        <li>Corrosão e proteção de metais</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="sub-label">Módulo 4 — Química Orgânica</div>
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">4.1</span><span class="module-title">Introdução à Orgânica</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Tetravalência do carbono: hibridização sp³, sp², sp</li>
+        <li class="highlight">Cadeia carbônica: aberta, fechada, mista, saturada, insaturada</li>
+        <li>Isomeria constitucional: cadeia, posição, função, metameria, tautomeria</li>
+        <li class="highlight">Isomeria geométrica (cis-trans) e óptica (enantiômeros)</li>
+        <li>Nomenclatura IUPAC: alcanos, alcenos, alcinos, arenos</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">4.2</span><span class="module-title">Funções Orgânicas</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Hidrocarbonetos: alcanos, alcenos, alcinos, aromáticos (benzeno)</li>
+        <li class="highlight">Álcoois: nomenclatura, primário/secundário/terciário, etanol</li>
+        <li class="highlight">Aldeídos e cetonas</li>
+        <li class="highlight">Ácidos carboxílicos e ésteres</li>
+        <li class="highlight">Aminas e amidas</li>
+        <li>Éteres e halogênios orgânicos</li>
+        <li>Fenóis</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">4.3</span><span class="module-title">Reações Orgânicas</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Adição: halogenação, hidrogenação, hidratação</li>
+        <li class="highlight">Substituição: halogenação de alcanos, substituição aromática</li>
+        <li class="highlight">Eliminação: desidratação (álcool → alceno)</li>
+        <li class="highlight">Esterificação e saponificação</li>
+        <li>Oxidação de álcoois, aldeídos</li>
+        <li>Polimerização: adição e condensação</li>
+        <li class="highlight">Biomoléculas: carboidratos, lipídios, proteínas, ácidos nucleicos (química)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">4.4</span><span class="module-title">Química Ambiental e Cotidiano</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Petróleo: refino, frações, impactos ambientais</li>
+        <li>Polímeros: naturais e sintéticos, reciclagem</li>
+        <li>Agrotóxicos e fertilizantes</li>
+        <li class="highlight">Combustíveis: etanol, biodiesel, hidrogênio</li>
+        <li>Ozônio: destruição e reparo</li>
+        <li>Chuva ácida</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MATEMÁTICA ===== -->
+<section class="discipline" id="mat" style="color:var(--mat)">
+  <div class="disc-header">
+    <div class="disc-num">03</div>
+    <div class="disc-info">
+      <h2>Matemática</h2>
+      <p>Alta prioridade · Fraqueza declarada · Foco em álgebra, funções e probabilidade</p>
+    </div>
+    <div class="disc-badge">ALTA</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Conjuntos e Lógica</span><span class="module-flag flag-ok">LEVE</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li>Operações com conjuntos: união, interseção, diferença</li>
+        <li>Diagramas de Venn e resolução de problemas</li>
+        <li>Proposições: negação, conjunção, disjunção, condicional</li>
+        <li>Quantificadores universal e existencial</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Funções (1º e 2º grau)</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Função afim: coeficiente angular, zeros, gráfico</li>
+        <li class="highlight">Função quadrática: vértice, zeros, bhaskara, gráfico (parábola)</li>
+        <li>Domínio, contradomínio, imagem</li>
+        <li>Função par, ímpar, crescente, decrescente</li>
+        <li>Composição e função inversa</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">Funções Exponencial e Logarítmica</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Função exponencial: gráfico, equações exponenciais</li>
+        <li class="highlight">Logaritmos: definição, propriedades, mudança de base</li>
+        <li class="highlight">Equações e inequações logarítmicas</li>
+        <li>Aplicações: juros compostos, crescimento populacional, pH</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">Trigonometria</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Razões trigonométricas no triângulo retângulo: sen, cos, tan</li>
+        <li>Círculo trigonométrico e valores notáveis</li>
+        <li class="highlight">Funções trigonométricas: gráficos, período, amplitude</li>
+        <li>Equações trigonométricas</li>
+        <li>Lei dos senos e lei dos cossenos</li>
+        <li>Identidades trigonométricas fundamentais</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.5</span><span class="module-title">Progressões</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">PA: termo geral, soma dos termos</li>
+        <li class="highlight">PG: termo geral, soma dos termos</li>
+        <li>Aplicações: juros simples (PA) e compostos (PG)</li>
+        <li>Sequências mistas</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.6</span><span class="module-title">Combinatória e Probabilidade</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Princípio fundamental da contagem</li>
+        <li class="highlight">Permutação, combinação e arranjo</li>
+        <li class="highlight">Probabilidade: definição clássica, eventos, complementar</li>
+        <li class="highlight">Probabilidade condicional e eventos independentes</li>
+        <li>Binômio de Newton</li>
+        <li>Probabilidade total e Teorema de Bayes (básico)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.7</span><span class="module-title">Geometria Plana</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Triângulos: área, semelhança, congruência, Pitágoras</li>
+        <li class="highlight">Quadriláteros: paralelogramo, trapézio, losango, retângulo</li>
+        <li class="highlight">Círculo e circunferência: área, comprimento, setor</li>
+        <li>Polígonos regulares</li>
+        <li>Transformações: translação, rotação, reflexão</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.8</span><span class="module-title">Geometria Espacial</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Prismas e pirâmides: volume e área</li>
+        <li class="highlight">Cilindro, cone e esfera: volume e área</li>
+        <li>Poliedros de Platão</li>
+        <li>Relação de Euler</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.9</span><span class="module-title">Geometria Analítica</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Ponto no plano: distância, ponto médio</li>
+        <li class="highlight">Reta: equação reduzida, geral, coeficiente angular</li>
+        <li>Posições relativas entre retas</li>
+        <li class="highlight">Circunferência: equação, posição de ponto e reta</li>
+        <li>Cônicas básicas: elipse, hipérbole, parábola (reconhecimento)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.10</span><span class="module-title">Estatística</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Média, mediana, moda, amplitude</li>
+        <li>Variância e desvio padrão</li>
+        <li class="highlight">Leitura e interpretação de gráficos e tabelas</li>
+        <li>Distribuição de frequências</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FÍSICA ===== -->
+<section class="discipline" id="fis" style="color:var(--fis)">
+  <div class="disc-header">
+    <div class="disc-num">04</div>
+    <div class="disc-info">
+      <h2>Física</h2>
+      <p>Prioridade leve · Comvest cobra conceitos mais que cálculos · Foco em mecânica e ondulatória</p>
+    </div>
+    <div class="disc-badge">LEVE</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Mecânica — Cinemática</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">MRU e MRUV: equações horárias</li>
+        <li class="highlight">Queda livre e lançamento de projéteis</li>
+        <li>Movimento circular: período, frequência, velocidade angular</li>
+        <li>Gráficos de posição, velocidade e aceleração</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Mecânica — Dinâmica</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Leis de Newton: inércia, F=ma, ação-reação</li>
+        <li class="highlight">Forças: peso, normal, atrito, tração</li>
+        <li>Plano inclinado e sistema de corpos</li>
+        <li class="highlight">Trabalho, energia cinética e potencial</li>
+        <li class="highlight">Conservação de energia mecânica</li>
+        <li>Potência e rendimento</li>
+        <li>Quantidade de movimento (impulso e colisões)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">Gravitação</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Lei da gravitação universal de Newton</li>
+        <li>Leis de Kepler</li>
+        <li>Peso e aceleração da gravidade</li>
+        <li>Satélites e velocidade orbital</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">Termodinâmica</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Temperatura, calor e escalas termométricas</li>
+        <li>Transmissão de calor: condução, convecção, irradiação</li>
+        <li class="highlight">Leis da termodinâmica (1ª e 2ª)</li>
+        <li>Ciclo de Carnot e rendimento de máquinas</li>
+        <li>Dilatação térmica</li>
+        <li class="highlight">Gases ideais: lei de Boyle, Charles, Gay-Lussac, Clapeyron</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.5</span><span class="module-title">Ondulatória e Acústica</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Ondas: comprimento, frequência, amplitude, velocidade</li>
+        <li class="highlight">Reflexão, refração, difração, interferência</li>
+        <li>Efeito Doppler</li>
+        <li>Som: intensidade, timbre, altura</li>
+        <li>Ressonância</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.6</span><span class="module-title">Óptica</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Reflexão: leis, espelhos planos e esféricos</li>
+        <li class="highlight">Refração: índice, lei de Snell, dispersão</li>
+        <li>Lentes: convergentes e divergentes, equação de Gauss</li>
+        <li>Olho humano e defeitos visuais</li>
+        <li>Instrumentos ópticos básicos</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.7</span><span class="module-title">Eletromagnetismo</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Carga elétrica: lei de Coulomb</li>
+        <li>Campo elétrico e potencial elétrico</li>
+        <li class="highlight">Corrente elétrica, resistência, lei de Ohm</li>
+        <li>Circuitos: série e paralelo, potência elétrica</li>
+        <li>Campo magnético: força magnética, regra da mão direita</li>
+        <li>Indução eletromagnética: lei de Faraday</li>
+        <li>Ondas eletromagnéticas: espectro</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.8</span><span class="module-title">Física Moderna</span><span class="module-flag flag-ok">LEVE</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Efeito fotoelétrico: fóton, Einstein</li>
+        <li>Radioatividade: tipos de emissão, meia-vida</li>
+        <li>Fissão e fusão nuclear</li>
+        <li>Dualidade onda-partícula</li>
+        <li>Relatividade: conceitos básicos de Einstein</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HISTÓRIA ===== -->
+<section class="discipline" id="his" style="color:var(--hum)">
+  <div class="disc-header">
+    <div class="disc-num">05</div>
+    <div class="disc-info">
+      <h2>História</h2>
+      <p>Manutenção · Comvest prioriza história contemporânea e do Brasil · Leitura contextual resolve bastante</p>
+    </div>
+    <div class="disc-badge">MANUTENÇÃO</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Brasil Colônia e Império</span><span class="module-flag flag-ok">LEVE</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li>Colonização portuguesa: capitanias, sesmarias</li>
+        <li>Economia colonial: açúcar, ouro, café</li>
+        <li>Escravidão: africana e indígena no Brasil</li>
+        <li>Inconfidência Mineira e outras revoltas</li>
+        <li>Vinda da família real e independência</li>
+        <li>Período regencial e Segundo Reinado</li>
+        <li>Abolição da escravidão (1888)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Brasil República</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">República Velha: coronelismo, oligarquias, café com leite</li>
+        <li class="highlight">Era Vargas: Estado Novo, trabalhismo, getulismo</li>
+        <li class="highlight">Ditadura Militar (1964–1985): fases, AI-5, abertura</li>
+        <li class="highlight">Redemocratização: Diretas Já, Constituição 1988</li>
+        <li class="highlight">Governos recentes: FHC, Lula, Dilma (impeachment), Bolsonaro, Lula III</li>
+        <li>Questões sociais: MST, movimentos sociais, desigualdade</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">História Mundial — Século XX</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">1ª Guerra Mundial: causas, blocos, consequências</li>
+        <li class="highlight">Revolução Russa (1917) e União Soviética</li>
+        <li class="highlight">2ª Guerra Mundial: nazismo, Holocausto, desfecho</li>
+        <li class="highlight">Guerra Fria: EUA vs URSS, corrida armamentista, proxy wars</li>
+        <li class="highlight">Descolonização da África e Ásia</li>
+        <li>Queda do Muro de Berlim e fim da URSS</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">História Antiga e Medieval</span><span class="module-flag flag-ok">LEVE</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li>Grécia: democracia ateniense, polis, filosofia</li>
+        <li>Roma: República, Império, queda</li>
+        <li>Feudalismo: estrutura, servos, Igreja medieval</li>
+        <li>Cruzadas e expansão islâmica</li>
+        <li>Renascimento e Humanismo</li>
+        <li>Reformas religiosas: Lutero, Calvino</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.5</span><span class="module-title">Mundo Contemporâneo</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">11 de setembro e "Guerra ao Terror"</li>
+        <li class="highlight">Conflitos atuais: Ucrânia, Oriente Médio (Gaza), Sudão</li>
+        <li class="highlight">Ascensão da China e reconfiguração global</li>
+        <li>Populismo e extrema-direita global</li>
+        <li class="highlight">Pandemia de COVID-19: impactos históricos</li>
+        <li>Multilateralismo em crise: ONU, OMC, acordos climáticos</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GEOGRAFIA ===== -->
+<section class="discipline" id="geo" style="color:var(--geo)">
+  <div class="disc-header">
+    <div class="disc-num">06</div>
+    <div class="disc-info">
+      <h2>Geografia</h2>
+      <p>Manutenção · Foco em geopolítica, Brasil e questões ambientais</p>
+    </div>
+    <div class="disc-badge">MANUTENÇÃO</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Geopolítica e Globalização</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Globalização: impactos econômicos, culturais, desigualdades</li>
+        <li class="highlight">Blocos econômicos: União Europeia, Mercosul, BRICS, NAFTA/USMCA</li>
+        <li class="highlight">Geopolítica do petróleo e energia</li>
+        <li>Neocolonialismo e dependência econômica</li>
+        <li class="highlight">Conflitos geopolíticos atuais</li>
+        <li>Fluxos migratórios internacionais</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Brasil — Território e Regiões</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Regiões brasileiras: características físicas, econômicas, sociais</li>
+        <li class="highlight">Desigualdade regional no Brasil: Norte-Sul, interior-litoral</li>
+        <li class="highlight">Urbanização no Brasil: metrópoles, periferização</li>
+        <li>Fronteiras agrícolas: Cerrado, MATOPIBA</li>
+        <li class="highlight">Amazônia: desmatamento, territórios indígenas, soberania</li>
+        <li>Reforma agrária e questão da terra</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">Questões Ambientais</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Mudanças climáticas: efeito estufa, aquecimento global, acordos (Paris, Quioto)</li>
+        <li class="highlight">Biomas brasileiros: características e ameaças</li>
+        <li>Recursos hídricos: escassez, gestão, Aquífero Guarani</li>
+        <li>Biodiversidade e extinção de espécies</li>
+        <li>Energias renováveis: matriz energética brasileira</li>
+        <li class="highlight">Agropecuária e impacto ambiental</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">Cartografia e Clima</span><span class="module-flag flag-ok">LEVE</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li>Leitura de mapas: escala, projeções, coordenadas</li>
+        <li>Fusos horários</li>
+        <li>Tipos de clima: tropical, equatorial, temperado, semiárido</li>
+        <li>Climas do Brasil: Nordeste, Amazônia, Sul</li>
+        <li>Relevo: planaltos, planícies, depressões no Brasil</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.5</span><span class="module-title">Geografia Econômica Mundial</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Desenvolvimento e subdesenvolvimento: IDH, PIB, Gini</li>
+        <li>Divisão internacional do trabalho</li>
+        <li>Industrialização nos países emergentes</li>
+        <li>Agronegócio brasileiro no mundo</li>
+        <li>Turismo e impactos</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FILOSOFIA E SOCIOLOGIA ===== -->
+<section class="discipline" id="fil" style="color:var(--fil)">
+  <div class="disc-header">
+    <div class="disc-num">07</div>
+    <div class="disc-info">
+      <h2>Filosofia & Sociologia</h2>
+      <p>Manutenção · Comvest integra com textos e contextos · Foco em correntes e autores-chave</p>
+    </div>
+    <div class="disc-badge">MANUTENÇÃO</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Filosofia Antiga e Medieval</span><span class="module-flag flag-ok">LEVE</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li>Pré-socráticos: Tales, Heráclito, Parmênides</li>
+        <li class="highlight">Sócrates: método maiêutico, "conhece-te a ti mesmo"</li>
+        <li class="highlight">Platão: mundo das ideias, teoria das formas, alegoria da caverna</li>
+        <li class="highlight">Aristóteles: lógica, ética, política, metafísica</li>
+        <li>Epicurismo e estoicismo</li>
+        <li>Filosofia medieval: Agostinho e Tomás de Aquino</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Filosofia Moderna</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Descartes: cogito ergo sum, dúvida metódica, racionalismo</li>
+        <li class="highlight">Locke, Hume e Berkeley: empirismo</li>
+        <li class="highlight">Kant: crítica da razão pura, imperativo categórico</li>
+        <li>Iluminismo: razão, liberdade, progresso</li>
+        <li>Rousseau: contrato social, vontade geral</li>
+        <li>Hobbes e Locke: estado de natureza e contratualismo</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">Filosofia Contemporânea</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Marx: materialismo histórico, mais-valia, alienação</li>
+        <li>Nietzsche: além do bem e do mal, vontade de poder</li>
+        <li class="highlight">Existencialismo: Sartre, Camus, Heidegger</li>
+        <li>Positivismo: Comte, ordem e progresso</li>
+        <li>Filosofia da ciência: Kuhn, Popper (falsificacionismo)</li>
+        <li class="highlight">Bioética: temas médicos (aborto, eutanásia, manipulação genética)</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">Sociologia — Clássicos</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Durkheim: fato social, anomia, solidariedade mecânica e orgânica</li>
+        <li class="highlight">Marx: classe social, luta de classes, ideologia</li>
+        <li class="highlight">Weber: ação social, tipos de dominação, ética protestante</li>
+        <li>Bourdieu: capital cultural, habitus, campo</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.5</span><span class="module-title">Sociologia Contemporânea</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Desigualdade social no Brasil: raça, classe, gênero</li>
+        <li class="highlight">Racismo estrutural: conceito e exemplos</li>
+        <li class="highlight">Movimentos sociais: feminismo, LGBTQIA+, antirracismo</li>
+        <li>Violência urbana e segurança pública</li>
+        <li>Democracia e cidadania</li>
+        <li class="highlight">Redes sociais e política: desinformação, fake news</li>
+        <li>Trabalho no século XXI: precarização, uberização</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTUGUÊS ===== -->
+<section class="discipline" id="por" style="color:var(--por)">
+  <div class="disc-header">
+    <div class="disc-num">08</div>
+    <div class="disc-info">
+      <h2>Língua Portuguesa</h2>
+      <p>Manutenção · Comvest exige interpretação sofisticada, não gramática decorada</p>
+    </div>
+    <div class="disc-badge">MANUTENÇÃO</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Interpretação e Leitura</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Inferência, pressuposição e implicatura</li>
+        <li class="highlight">Intertextualidade e interdiscursividade</li>
+        <li class="highlight">Ponto de vista e posição do enunciador</li>
+        <li>Ironia, eufemismo, ambiguidade</li>
+        <li>Figuras de linguagem: metáfora, metonímia, hipérbole, antítese</li>
+        <li>Gêneros textuais: crônica, artigo, reportagem, ensaio</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Literatura Brasileira</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Modernismo: 1ª fase (Oswald, Mário de Andrade), Semana de 22</li>
+        <li class="highlight">Modernismo: 2ª fase — Drummond, Bandeira, Cecília Meireles</li>
+        <li class="highlight">Modernismo: 3ª fase — Guimarães Rosa, Clarice Lispector</li>
+        <li>Literatura contemporânea: autores negros, periféricos (Conceição Evaristo, Ferréz)</li>
+        <li>Realismo e Naturalismo: Machado de Assis, Aluísio Azevedo</li>
+        <li>Romantismo: José de Alencar, Castro Alves</li>
+        <li class="highlight">Leitura obrigatória: verificar a lista oficial do Comvest 2026</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">Gramática Contextualizada</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Coesão e coerência textual</li>
+        <li>Conectivos e operadores argumentativos</li>
+        <li class="highlight">Concordância verbal e nominal (casos polêmicos)</li>
+        <li>Regência verbal e nominal</li>
+        <li>Crase: usos e omissões</li>
+        <li>Pontuação: vírgula, ponto e vírgula, dois-pontos</li>
+        <li>Paralelismo sintático</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">Literatura Portuguesa e Africana</span><span class="module-flag flag-ok">LEVE</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li>Camões: Os Lusíadas (épica)</li>
+        <li>Fernando Pessoa: heterônimos</li>
+        <li>Eça de Queirós: realismo português</li>
+        <li>Literaturas africanas de língua portuguesa: Angola, Moçambique</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INGLÊS ===== -->
+<section class="discipline" id="ing" style="color:var(--ing)">
+  <div class="disc-header">
+    <div class="disc-num">09</div>
+    <div class="disc-info">
+      <h2>Língua Inglesa</h2>
+      <p>Manutenção · Comvest cobra leitura e interpretação, não produção</p>
+    </div>
+    <div class="disc-badge">MANUTENÇÃO</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Leitura e Compreensão</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Reading comprehension: inferência, ideia principal, detalhe</li>
+        <li class="highlight">Vocabulário científico e acadêmico</li>
+        <li>Cognatos e falsos cognatos</li>
+        <li>Estratégias de leitura: skimming e scanning</li>
+        <li>Gêneros textuais em inglês: artigo científico, reportagem, editorial</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Gramática para Leitura</span><span class="module-flag flag-med">MÉDIA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Tempos verbais: present, past, future, perfect</li>
+        <li>Voz passiva: uso e identificação</li>
+        <li>Pronomes relativos e conectivos</li>
+        <li>Modal verbs: can, could, may, might, must, should</li>
+        <li>Phrasal verbs mais comuns</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REDAÇÃO ===== -->
+<section class="discipline" id="red" style="color:var(--red)">
+  <div class="disc-header">
+    <div class="disc-num">10</div>
+    <div class="disc-info">
+      <h2>Redação</h2>
+      <p>Alta prioridade · Peso enorme na 2ª fase · Prática semanal desde o primeiro dia</p>
+    </div>
+    <div class="disc-badge">ALTA</div>
+  </div>
+
+  <div class="modules">
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.1</span><span class="module-title">Estrutura Dissertativo-Argumentativa</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Introdução: tese, contexto, recorte do tema</li>
+        <li class="highlight">Desenvolvimento: argumentos, dados, exemplos, contraposição</li>
+        <li class="highlight">Conclusão: retomada da tese + proposta de solução concreta</li>
+        <li>Parágrafos: tópico frasal + desenvolvimento + mini-conclusão</li>
+        <li>Tamanho adequado: ~25–30 linhas bem aproveitadas</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.2</span><span class="module-title">Argumentação e Repertório</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Uso de dados estatísticos e pesquisas</li>
+        <li class="highlight">Referências filosóficas: Kant, Rousseau, Bourdieu</li>
+        <li class="highlight">Referências históricas como argumento</li>
+        <li>Citações curtas e contextualizadas</li>
+        <li>Evitar: lugares-comuns, generalizações vagas, "desde os primórdios"</li>
+        <li>Construir repertório via leitura semanal de Nexo, Agência Pública, Le Monde Diplo</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.3</span><span class="module-title">Linguagem e Coesão</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Operadores argumentativos: contudo, portanto, ademais, visto que</li>
+        <li class="highlight">Coesão referencial: pronomes, sinônimos, elipse</li>
+        <li>Impessoalidade e registro formal</li>
+        <li>Vocabulário preciso: evitar repetição e palavras genéricas</li>
+        <li class="highlight">Evitar: "é notório que", "nos dias atuais", frases sem sujeito</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.4</span><span class="module-title">Temas Recorrentes no Comvest</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Saúde pública: SUS, desigualdade no acesso, pandemia</li>
+        <li class="highlight">Meio ambiente: desmatamento, mudança climática, agronegócio</li>
+        <li class="highlight">Tecnologia e sociedade: IA, privacidade, desinformação</li>
+        <li class="highlight">Desigualdade e racismo no Brasil</li>
+        <li>Educação: acesso, qualidade, evasão</li>
+        <li>Democracia e crise política</li>
+        <li>Gênero e feminismo</li>
+        <li>Ciência, negacionismo e epistemologia</li>
+      </ul></div>
+    </div>
+    <div class="module">
+      <div class="module-header"><span class="module-num">1.5</span><span class="module-title">Critérios de Correção Comvest</span><span class="module-flag flag-hot">ALTA</span></div>
+      <div class="module-body"><ul class="topic-list">
+        <li class="highlight">Adequação ao tema: ler com atenção máxima o enunciado</li>
+        <li class="highlight">Desenvolvimento e argumentação</li>
+        <li>Coesão e coerência</li>
+        <li>Domínio da norma culta</li>
+        <li class="highlight">Proposta de intervenção: viável, articulada, sem violação de direitos</li>
+        <li>Usar as redações corrigidas disponíveis no site do Comvest como modelo</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end main -->
+
+<div class="footer">
+  <div>
+    <p>Grade completa · Comvest 2026 · Medicina Unicamp · Gerado em 22.04.2026</p>
+    <div class="legend-row">
+      <div class="leg"><div class="leg-dot" style="background:#fecaca"></div>🔴 Alta prioridade</div>
+      <div class="leg"><div class="leg-dot" style="background:#fde68a"></div>🟡 Média prioridade</div>
+      <div class="leg"><div class="leg-dot" style="background:#bbf7d0"></div>🟢 Manutenção</div>
+      <div class="leg">★ = aparece com frequência nas provas históricas</div>
+    </div>
+  </div>
+  <p style="font-size:10px">verifique a lista de leituras obrigatórias no site oficial do Comvest</p>
+</div>
+
+
+<script>
+(function() {
+  const STORAGE_KEY = 'comvest2026_progress';
+
+  // Load saved state
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+    catch(e) { return {}; }
+  }
+
+  function saveState(state) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch(e) {}
+  }
+
+  // Generate stable ID for each topic
+  function getTopicId(li) {
+    return li.dataset.topicId;
+  }
+
+  // Initialize all topic items
+  function initTopics() {
+    const state = loadState();
+    const allLi = document.querySelectorAll('.topic-list li');
+
+    allLi.forEach((li, idx) => {
+      // Assign stable ID
+      const section = li.closest('section');
+      const sectionId = section ? section.id : 'x';
+      const module = li.closest('.module');
+      const moduleTitle = module ? module.querySelector('.module-title')?.textContent.trim().replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_]/g,'') : idx;
+      const topicId = sectionId + '__' + moduleTitle + '__' + idx;
+      li.dataset.topicId = topicId;
+
+      // Wrap content in span
+      const text = li.innerHTML;
+      li.innerHTML = '<span class="topic-check"></span><span class="topic-text">' + text + '</span>';
+
+      // Apply saved state
+      if (state[topicId]) {
+        li.classList.add('done');
+      }
+
+      // Click handler
+      li.addEventListener('click', function() {
+        const id = getTopicId(this);
+        const st = loadState();
+        if (this.classList.contains('done')) {
+          this.classList.remove('done');
+          delete st[id];
+        } else {
+          this.classList.add('done');
+          st[id] = 1;
+        }
+        saveState(st);
+        updateAllProgress();
+      });
+    });
+  }
+
+  // Add progress bars to each section
+  function initProgressBars() {
+    const sections = document.querySelectorAll('section.discipline');
+    sections.forEach(section => {
+      const discHeader = section.querySelector('.disc-header');
+      const progressDiv = document.createElement('div');
+      progressDiv.className = 'disc-progress';
+      progressDiv.innerHTML = 
+        '<div class="disc-progress-label">' +
+          '<span class="disc-progress-count">0 / 0 tópicos</span>' +
+          '<span class="disc-progress-pct">0%</span>' +
+        '</div>' +
+        '<div class="disc-progress-bar-wrap"><div class="disc-progress-bar"></div></div>';
+      discHeader.insertAdjacentElement('afterend', progressDiv);
+    });
+  }
+
+  // Update progress displays
+  function updateAllProgress() {
+    let totalAll = 0, doneAll = 0;
+
+    document.querySelectorAll('section.discipline').forEach(section => {
+      const items = section.querySelectorAll('.topic-list li');
+      const done = section.querySelectorAll('.topic-list li.done');
+      const total = items.length;
+      const doneCount = done.length;
+      const pct = total ? Math.round((doneCount / total) * 100) : 0;
+
+      totalAll += total;
+      doneAll += doneCount;
+
+      const bar = section.querySelector('.disc-progress-bar');
+      const count = section.querySelector('.disc-progress-count');
+      const pctLabel = section.querySelector('.disc-progress-pct');
+      if (bar) bar.style.width = pct + '%';
+      if (count) count.textContent = doneCount + ' / ' + total + ' tópicos';
+      if (pctLabel) pctLabel.textContent = pct + '%';
+    });
+
+    // Global
+    const globalPct = totalAll ? Math.round((doneAll / totalAll) * 100) : 0;
+    const globalBar = document.querySelector('.global-progress-bar');
+    const globalPctEl = document.querySelector('.global-progress-pct');
+    const globalLabel = document.querySelector('.global-progress-label');
+    if (globalBar) globalBar.style.width = globalPct + '%';
+    if (globalPctEl) globalPctEl.textContent = globalPct + '%';
+    if (globalLabel) globalLabel.textContent = doneAll + ' de ' + totalAll + ' tópicos concluídos';
+  }
+
+  // Add global progress bar after nav
+  function initGlobalProgress() {
+    const nav = document.querySelector('nav.nav');
+    const globalDiv = document.createElement('div');
+    globalDiv.className = 'global-progress';
+    globalDiv.innerHTML =
+      '<span class="global-progress-label">0 de 0 tópicos concluídos</span>' +
+      '<div class="global-progress-bar-wrap"><div class="global-progress-bar"></div></div>' +
+      '<span class="global-progress-pct">0%</span>' +
+      '<button class="reset-btn" id="resetBtn">resetar</button>';
+    nav.insertAdjacentElement('afterend', globalDiv);
+
+    document.getElementById('resetBtn').addEventListener('click', function() {
+      if (confirm('Resetar todo o progresso?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        document.querySelectorAll('.topic-list li.done').forEach(li => li.classList.remove('done'));
+        updateAllProgress();
+      }
+    });
+  }
+
+  // Boot
+  document.addEventListener('DOMContentLoaded', function() {
+    initGlobalProgress();
+    initProgressBars();
+    initTopics();
+    updateAllProgress();
+  });
+})();
+</script>
+
+</body>
+</html>
